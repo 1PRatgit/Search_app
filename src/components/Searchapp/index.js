@@ -74,8 +74,8 @@ const Searchapp = () => {
         {plantitem.length > 0 ? (
           <div className="container1">
             <div className="grid">
-              {plantitem.map((movieReq) =>
-                <Plant key={movieReq.id} {...movieReq} />)}
+              {plantitem.map((itemReq) =>
+                <Plant key={itemReq.id} {...itemReq} />)}
             </div>
           </div>
         ) : (
