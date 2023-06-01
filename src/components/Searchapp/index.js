@@ -1,92 +1,128 @@
-import React, { useEffect, useState } from 'react'
-import Plant from '../Plant';
+import React from 'react'
 import './index.css';
-const Searchapp = () => {
-  const API_URL = "https://perenual.com/api/species-list?page=1&key=sk-mgy1643666f7adda3485";
 
-  const [query, setQuery] = useState('');
-  const [plantitem, setplantitem] = useState([]);
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => res.json())
-      .then(data => {
-        console.log(data);
-        setplantitem(data.data);
-      })
-  }, [])
-
-
-  const searchMovie = async (e) => {
-    e.preventDefault();
-    console.log("Searching");
-    try {
-       const url = `https://perenual.com/api/species-list?key=sk-mgy1643666f7adda3485&q=${query}`;
-      
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log(data);
-      setplantitem(data.data);
-    }
-    catch (e) {
-      console.log(e);
-    }
-  }
-
-  const changeHandler = (e) => {
-    setQuery(e.target.value);
-  }
-
+const index = () => {
   return (
-    <>
-      <header>
-        <div className='container flex'>
-          <div className='logo'>
-            <img src='' alt='logo' />
-          </div>
-          <h4 className='bot'>
-            Botanic: of and for the earth
-          </h4>
-          <h4>
-          <a href = "">My list</a>
-            </h4>
-        </div>
-      </header>
-      <section className='hero'>
-        <div className='container'>
-          <h3>Search for Botanics</h3> <h6>rose, sunflower,cherry, apple</h6>
+    <div >
+      <div class="container-fluid background-container">
+      {/* NavBar section */}
+      <nav class="navbar navbar-expand-lg navbar-light transparent-navbar white-navbar">
+        {/* <a class="navbar-brand" href={require('../Images/leaf.png')}>Logo</a> */}
+        <img className="navbar-brand" src={require('../Images/leaf.png')} />
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
 
-            <form className="flex" onSubmit={searchMovie} autoComplete="off">
-              <input
-                type="search"
-                placeholder="Movie Search"
-                className="me-2"
-                aria-label="search"
-                name="query"
-                value={query} onChange={changeHandler} />
-                
-              <button variant="secondary" type="submit">Search</button>
-            </form>
-          
+          </ul>
         </div>
-      </section>
-      <div>
-        {plantitem.length > 0 ? (
-          <div className="container1">
-            <div className="grid">
-              {plantitem.map((itemReq) =>
-                <Plant key={itemReq.id} {...itemReq} />)}
+      </nav>
+     
+       
+      <div class="container inner-container">
+        {/* Introduction section */}
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Varshini terracotta</h1>
+            <p>is a designed and curated collection 
+            of contemporary lifestyle products in traditional terracotta crafts from heritage pottery clusters of India.</p>
+            <span>
+            Each state or region of Bharat has its own unique styles of indigenous clay craft or pottery which has been handed down since generations, 
+            but slowly loosing out to industrial products.
+
+            </span>
+            <br></br>
+            <br></br>
+           <span>
+            At varshini Terracotta, we connect traditional pottery clusters of our culturally rich motherland, 
+            making beautiful indigenous pottery and unable to sell to far-away buyers,
+            with discerning craft lovers with no direct access to these beautiful products, 
+            through the power of e-commerce!
+
+           </span>
+
+          </div>
+          <div class="col-md-6">
+            <img className="intro-image" src={require('../Images/prod1.jpg')} />
+          </div>
+        </div>
+        <br></br>
+        {/* shop section */}
+        <h2>Products</h2>
+        <br></br><br></br>
+        <div class="row" id="shop">
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img src={require('../Images/prod7.jpg')} className="card-img-top" alt="Product" />
+              <div className="card-body">
+                <h5 className="card-title">Product Name</h5>
+                <p className="card-text">Product Description</p>
+                <p className="card-text">Price: $99.99</p>
+                <button className="btn btn-primary">Add to Cart</button>
+              </div>
             </div>
           </div>
-        ) : (
-          <h2>Sorry !! No plantitem Found</h2>
-        )}
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img src={require('../Images/prod5.jpg')} className="card-img-top" alt="Product" />
+              <div className="card-body">
+                <h5 className="card-title">Product Name</h5>
+                <p className="card-text">Product Description</p>
+                <p className="card-text">Price: $99.99</p>
+                <button className="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <img src={require('../Images/prod9.jpg')} className="card-img-top" alt="Product" />
+              <div className="card-body">
+                <h5 className="card-title">Product Name</h5>
+                <p className="card-text">Product Description</p>
+                <p className="card-text">Price: $99.99</p>
+                <button className="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
       </div>
 
+      <br></br>
 
-    </>
-  );
+      {/* contact section */}
+      <div class="container" id="contact">
+        <h1>Contact Us</h1>
+        <br></br>
+        Email: admin@varshiniterracotta.com
+        <br></br><br></br>
+        Whatsapp: 09901930567
+        <br></br><br></br>
+        Address:
+        320 2nd Main, 2nd Cross Rd, Narayanpura, Dharwad, Karnataka 580008
+       
+        </div>
+      
 
+      </div>
+     </div>
+
+    </div>
+    
+
+    
+
+
+  )
 }
 
-export default Searchapp
+export default index
