@@ -1,11 +1,22 @@
-
 import './App.css';
-import Searchapp from './components/Searchapp';
-import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
+import Home from './components/HomePage/Home';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductShow from './components/Products/ProductShow';
+import Contact from './components/Contact/Contact';
+
 function App() {
   return (
-        <Searchapp/>
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Home />} />
+        <Route path="/Search_app" element={<Home />} />
+        <Route path="/About" element={<Home />} />
+        <Route path="/productShow" element={<ProductShow />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+

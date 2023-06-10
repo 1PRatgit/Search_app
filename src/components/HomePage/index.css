@@ -1,0 +1,47 @@
+.transparent-navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.navbar-brand {
+  padding-left: 500px;
+}
+/* .white-navbar {
+  background-color: white !important;
+} */
+
+.navbar-light .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.background-container {
+  background-image: url('../Images/b2.jpg');
+  background-size: cover;
+  background-position: center;
+  /* height: 400px; */
+}
+.inner-container {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the background color and opacity as needed */
+}
+
+.intro-image {
+  height: 750px;
+  width: 500px;
+}
+.card-img-top {
+  height: 300px;
+  width:320px;
+
+}
+.google-map {
+  padding-bottom: 50%;
+  position: relative;
+}
+
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
