@@ -1,3 +1,11 @@
+- Created a project for a shop, showcasing its product catalog.
+- Implemented filtering options for sorting items based on price.
+- Incorporate a Google map on the contact page to display the address.
+
+# Live Demo
+
+https://e-commerce-i3se.onrender.com
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
